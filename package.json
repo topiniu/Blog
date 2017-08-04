@@ -1,0 +1,29 @@
+{
+  "name": "Blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/topiniu/Blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/topiniu/Blog/issues"
+  },
+  "homepage": "https://github.com/topiniu/Blog#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.4",
+    "file-loader": "^0.11.2",
+    "html-loader": "^0.5.0",
+    "less-loader": "^4.0.5",
+    "markdown-loader": "^2.0.1",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1"
+  }
+}
