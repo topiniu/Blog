@@ -1,0 +1,1 @@
+{"version":3,"file":"1.ffcb1e99ed1049e46aa2.hot-update.js","sources":["webpack:///./src/js/main.js"],"sourcesContent":["$(function () {\n  $('.j_test-btn').on('click', showPassage);\n});\n\n\n//////////////////\n// WEBPACK FOOTER\n// ./src/js/main.js\n// module id = 2\n// module chunks = 1"],"mappings":";;;;;AAAA;AACA;AACA;;;;A","sourceRoot":""}

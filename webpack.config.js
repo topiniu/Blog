@@ -7,17 +7,21 @@ module.exports = {
 
   // 在这里写你的资源文件
   entry: {
-    jquery: './src/res/jquery.3.2.1.js',
     main: './src/js/main.js'
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery",
+      "window.jQuery": "jquery"
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+
   ],
   output: {
     filename: '[name].bundle.js',
     path: __dirname + '/blog/assets',
   },
-
   module: {
     rules: [
       {
@@ -48,8 +52,6 @@ module.exports = {
     hot: true,
     inline: true,
     contentBase: __dirname + '/blog',
-    watchOptions: {
-      poll: true
-    }
+    disableHostCheck: true
   }
 }
