@@ -7,6 +7,7 @@ module.exports = {
 
   // 在这里写你的资源文件
   entry: {
+    jquery: './src/res/jquery.3.2.1.js',
     main: './src/js/main.js'
   },
   plugins: [
