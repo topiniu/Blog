@@ -4,6 +4,10 @@ const webpack = require('webpack');
 module.exports = {
 
   devtool: 'cheap-module-source-map',
+  watch: true,
+  watchOptions: {
+    ignored: './sec/js/*.js'
+  },
 
   // 在这里写你的资源文件
   entry: {
@@ -15,8 +19,7 @@ module.exports = {
       jQuery: "jquery",
       "window.jQuery": "jquery"
     }),
-    new webpack.HotModuleReplacementPlugin(),
-
+    new webpack.HotModuleReplacementPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
@@ -49,7 +52,6 @@ module.exports = {
   devServer: {
     port: 7777,
     host: '0.0.0.0',
-    hot: true,
     inline: true,
     contentBase: __dirname + '/blog',
     disableHostCheck: true
