@@ -22,8 +22,8 @@ $(function () {
       jPassageContent.css('height', 'auto');
       // jPassageContent.css('-webkit-line-clamp', 19);
       // console.log('entering');
-      if (jPassageContent.height() < 500) {
-        jPassageItem.css('height', jPassageContent.height() + 62 + 50);
+      if (jPassageContent.height() < 438) {
+        jPassageItem.css('height', jPassageItem.height() + 50);
         setTimeout(function () {
           jPassageItem.css('height', 500);
         }, 300);
@@ -39,7 +39,9 @@ $(function () {
       }, 1000);
     }
 
-  })
+  });
+
+  loadData();
 
   blurImg();
 });

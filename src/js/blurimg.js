@@ -11,6 +11,7 @@ export default function blurImg() {
 
     img_full.src = full;
 
+    // 闭包解决this指向问题
     function J(img) {
       img_full.onload = function () {
         img.src = full; // 利用缓存机制实现直接替换
