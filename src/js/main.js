@@ -1,5 +1,5 @@
 import loadData from './loadData.js';
-import blurImg from './blurImg.js';
+import blurImg from './blurimg.js';
 import '../less/navigationBar.less';
 import '../less/main.less';
 
