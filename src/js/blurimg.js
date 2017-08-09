@@ -3,9 +3,13 @@ export default function blurImg() {
   var imgs = document.getElementsByTagName("img");
   for (var i = 0; i < imgs.length; i++) {
     var img = imgs[i];
+
+    var full = img.getAttribute("data-full");
+    if (full === null) {
+      continue;
+    }
     img.style.filter = "blur(15px)";
     img.style.transition = "all .3s";
-    var full = img.getAttribute("data-full");
 
     var img_full = document.createElement("img");
 

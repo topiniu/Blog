@@ -17,7 +17,7 @@ module.exports = {
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
-      "window.jQuery": "jquery"
+      "window.jquery": "jquery"
     }),
     new webpack.HotModuleReplacementPlugin()
   ],
@@ -35,9 +35,15 @@ module.exports = {
           'less-loader'
         ]
       }, {
-        test: /\.(png|svg|jpg|gif)&/,
+        test: /\.(png|svg|jpg|gif)$/,
         use: [
-          'file-loader'
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'assets',
+              name: '[name].[ext]'
+            }
+          }
         ]
       }, {
         test: /\.md$/,

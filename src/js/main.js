@@ -2,6 +2,7 @@ import loadData from './loadData.js';
 import blurImg from './blurimg.js';
 import '../less/navigationBar.less';
 import '../less/main.less';
+import '../res/mineicon.png';
 
 
 $(function () {
@@ -39,6 +40,35 @@ $(function () {
       }, 1000);
     }
 
+  });
+
+  // navbtn 动画效果与导航栏展现
+  $('.j_right-content').on('mouseenter', function () {
+    $('.j_nav-btn').css('height', '35px');
+    $('.j_nav-item').eq(0).css({
+      'transform': 'rotate(45deg)',
+      'top': '7px'
+    });
+    $('.j_nav-item').eq(1).css({
+      'transform': 'rotate(-45deg)',
+    });
+    $('.j_nav-item-text').fadeOut('fast');
+
+    $('.j_nav-panel').fadeIn('fast');
+  });
+
+  $('.j_right-content').on('mouseleave', function () {
+    $('.j_nav-btn').css('height', '9px');
+    $('.j_nav-item').eq(0).css({
+      'transform': 'rotate(0deg)',
+      'top': '0px'
+    });
+    $('.j_nav-item').eq(1).css({
+      'transform': 'rotate(0deg)',
+    });
+    $('.j_nav-item-text').fadeIn('fast');
+
+    $('.j_nav-panel').fadeOut('fast');
   });
 
   loadData();
