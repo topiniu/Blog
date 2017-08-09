@@ -4,7 +4,7 @@ const webpack = require('webpack');
 module.exports = {
 
   devtool: 'cheap-module-source-map',
-  watch: false,
+  watch: true,
   watchOptions: {
     ignored: './sec/js/*.js'
   },

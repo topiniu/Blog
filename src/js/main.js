@@ -71,7 +71,15 @@ $(function () {
     $('.j_nav-panel').fadeOut('fast');
   });
 
+  $('.j_contact-btn').on('mouseenter', function () {
+    $(this).children('svg').css('fill', 'white');
+  });
+  $('.j_contact-btn').on('mouseleave', function () {
+    $(this).children('svg').css('fill', 'black');
+  });
+
   loadData();
 
   blurImg();
+
 });
