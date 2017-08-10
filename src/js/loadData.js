@@ -4,17 +4,37 @@ import blurImg from './blurimg';
 import showmore from './showMoreBtn'
 
 
+
+const f = $('.j_left-blog-list-container');
+
 export default function (type) {
 
-  console.log('置空');
-  $('.j_left-blog-list-container').empty();
-  $('.j_left-blog-list-container').css('opacity', '0');
+  // console.log('置空');
+  f.empty();
+  f.css('opacity', '0');
 
   let __PASSAGELIST = getPassageList(type);
 
+  if (__PASSAGELIST.length === 0) {
+    var n = $('<h1>目前没有任何可供阅读的文档</h1>');
+    f.append(n);
+    // f.fadeIn('slow');
+    setTimeout(function () {
+      f.css('opacity', '1');
+    }, 1000);
+
+
+    showmore();
+
+    blurImg();
+
+    return;
+
+  }
+
 
   const self = this;
-  // console.log(__PASSAGELIST.length);
+  console.log(__PASSAGELIST.length);
   for (let i = 0; i < __PASSAGELIST.length; i++) {
     // console.log(`title=${__PASSAGELIST[i].title} content=${__PASSAGELIST[i].content} createDate=${__PASSAGELIST[i].createDate}  updateDate=${__PASSAGELIST[i].updateDate}`)
     var newItem = $('.j_passage-item-tem').clone(true);
@@ -44,17 +64,17 @@ function appendItem(newItem, title, content, createDate, updateDate, type) {
   $(newItem).removeClass(' j_passage-item-tem');
   $(newItem).addClass(' j_passage-item');
 
-  // $('.j_left-blog-list-container').append(newItem);
-  $(newItem).appendTo($('.j_left-blog-list-container'));
+  // f.append(newItem);
+  $(newItem).appendTo(f);
   console.log('appended');
 
   showmore();
 
   blurImg();
 
-  // $('.j_left-blog-list-container').fadeIn('slow');
+  // f.fadeIn('slow');
   setTimeout(function () {
-    $('.j_left-blog-list-container').css('opacity', '1');
+    f.css('opacity', '1');
 
   }, 1000);
 
