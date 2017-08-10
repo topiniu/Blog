@@ -8,7 +8,7 @@ export default function () {
       $('.j_left-blog-list-container').css('width', '100%');
       $(this).text('退出全屏');
     } else {
-      $('.j_left-blog-list-container').css('width', '600px');
+      $('.j_left-blog-list-container').css('width', '78%');
       $(this).text('全屏阅读');
 
     }
