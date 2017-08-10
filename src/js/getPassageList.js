@@ -1,10 +1,17 @@
-import Passage from './passageEntity.js';
-import testFile from '../md/testFile.md';
+import list from './PASSAGELIST'
 
-export default function getPassageList() {
-  return [
-    // new Passage('Test', testFile, new Date().toDateString())
-    new Passage('Test', testFile, '2017-08-08', '2017-08-09')
+export default function getPassageList(type) {
+  const pl = list();
 
-  ];
+  if (type === 'all') {
+    return pl;
+  } else {
+    let plt = [];
+    for (let i = 0; i < pl.length; i++) {
+      if (pl[i].type === type) {
+        plt[plt.length] = pl[i];
+      }
+    }
+    return plt;
+  }
 }

@@ -4,14 +4,15 @@ const webpack = require('webpack');
 module.exports = {
 
   devtool: 'cheap-module-source-map',
-  watch: false,
+  watch: true,
   watchOptions: {
     ignored: './sec/js/*.js'
   },
 
   // 在这里写你的资源文件
   entry: {
-    main: './src/js/main.js'
+    main: './src/js/main.js',
+    // maincss: './src/less/main.less'
   },
   plugins: [
     new webpack.ProvidePlugin({
@@ -31,7 +32,12 @@ module.exports = {
         test: /\.(css|less)$/,
         use: [
           'style-loader',
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              minimize: true,
+            }
+          },
           'less-loader'
         ]
       }, {

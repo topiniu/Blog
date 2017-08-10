@@ -3,6 +3,7 @@
 <head>
   <!-- css文件 -->
   <title>topiniu</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <style src="assets/main.bundle.css"></style>
   <style src="assets/navigationBar.bundle.css"></style>
 </head>
@@ -98,6 +99,11 @@
         />
       </g>
     </g>
+
+    <g id="folder">
+      <path xmlns="http://www.w3.org/2000/svg" d="M56.98,11.5H28.02V6.52c0-1.665-1.354-3.02-3.02-3.02H3.02C1.354,3.5,0,4.854,0,6.52V20.5v2v30.98  c0,1.665,1.354,3.02,3.02,3.02H56.98c1.665,0,3.02-1.354,3.02-3.02V22.5v-2v-5.98C60,12.854,58.646,11.5,56.98,11.5z M58,53.48  c0,0.563-0.457,1.02-1.02,1.02H3.02C2.457,54.5,2,54.043,2,53.48V22.5h56V53.48z M2,20.5V6.52C2,5.957,2.457,5.5,3.02,5.5H25  c0.562,0,1.02,0.457,1.02,1.02v6.98H56.98c0.563,0,1.02,0.457,1.02,1.02v5.98H2z"
+      />
+    </g>
   </svg>
   <div id="rootContainer">
     <!-- <div class="ani-nav-background j_ani-nav-background">
@@ -118,54 +124,33 @@
         </li>
       </ul>
     </div> -->
-    <div class="top-header">
-      <div class="left-content">
-        <img src="assets/assetsmineicon.png">
-      </div>
-      <div class="right-content j_right-content">
-        <span class="nav-btn j_nav-btn">
+    <div class="top-header-container">
+      <div class="top-header">
+        <div class="left-content">
+          <img src="assets/assetsmineicon.png">
+        </div>
+        <div class="right-content j_right-content">
+          <span class="nav-btn j_nav-btn">
           <a class="nav-item j_nav-item"></a>
           <a class="nav-item j_nav-item"></a>
           <!-- <a class="nav-item j_nav-item"></a> -->
         </span>
-        <a class="nav-item-text j_nav-item-text">MENU</a>
+          <a class="nav-item-text j_nav-item-text">MENU</a>
 
-        <div class="nav-panel j_nav-panel">
-          <ul>
-            <li><a>家常豆腐</a></li>
-            <li class="notSide"><a>地三鲜</a></li>
-            <li class="notSide"><a>孜然肉片</a></li>
-            <li><a>大米饭</a></li>
-          </ul>
+          <div class="nav-panel j_nav-panel">
+            <ul>
+              <li><a>家常豆腐</a></li>
+              <li class="notSide"><a>地三鲜</a></li>
+              <li class="notSide"><a>孜然肉片</a></li>
+              <li class="j_fullScreen"><a>全屏阅读</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
     <div class="content-container">
       <div class="left-blog-list-container j_left-blog-list-container">
-        <div style="display:none;" class="passage-item j_passage-item">
-          <div class="passage-title">
-            <p class="title-text j_title-text">
 
-            </p>
-            <span></span>
-
-          </div>
-          <div class="passage-content j_passage-content">
-
-          </div>
-          <div class="opacity-cover j_opacity-cover">
-            <span>
-              <svg class="calendar-icon" viewBox="0 0 60 60">
-                <use xlink:href="#calendar">
-                </use>
-              </svg>
-              <p class="passage-update-date j_passage-update-date">
-                
-              </p>
-            </span>
-            <p class="tip-text j_tip-text">显示全部</p>
-          </div>
-        </div>
       </div>
 
       <div class="right-personal-info-container">
@@ -174,13 +159,15 @@
         </div>
         <div class="info-box information">
           <span class="container-title">关于我</span>
-          <p class="information-text j_information-text">
-            这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试 这是测试这是测试这是测试这是测试这是测试这是测试 这是测试这是测试这是测试这是测试这是测试这是测试
-          </p>
+          <div class="container-content">
+            <p class="information-text j_information-text">
+              这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试这是测试 这是测试这是测试这是测试这是测试这是测试这是测试 这是测试这是测试这是测试这是测试这是测试这是测试
+            </p>
+          </div>
         </div>
         <div class="info-box contact-btn">
           <span class="container-title">认识我</span>
-          <div class="contact-btn-container">
+          <div class="container-content contact-btn-container">
             <a class="j_contact-btn" title="instagram" target="_blank" href=" https://www.instagram.com/topiniu/">
               <svg class="contact-icon" viewBox="0 0 612 612">
                 <use xlink:href="#instagram"></use>
@@ -206,9 +193,83 @@
             </a>
           </div>
         </div>
+
+        <div class="info-box passage-type">
+          <span class="container-title">文档分类</span>
+          <div class="container-content">
+            <div class="folder j_folder" data-type="Front-end">
+              <span class="folder-icon">
+                <svg class="type-container-icon j_type-container-icon" viewBox="0 0 60 60">
+                  <use xlink:href="#folder">
+                  </use>
+                </svg>
+              </span>
+              <span class="folder-text j_folder-text">
+                Front-end
+              </span>
+            </div>
+            <div class="folder j_folder" data-type="Photography">
+              <span class="folder-icon">
+                <svg class="type-container-icon j_type-container-icon" viewBox="0 0 60 60">
+                  <use xlink:href="#folder">
+                  </use>
+                </svg>
+              </span>
+              <span class="folder-text j_folder-text">
+                Photography
+              </span>
+            </div>
+            <div class="folder j_folder" data-type="Music">
+              <span class="folder-icon">
+                <svg class="type-container-icon j_type-container-icon" viewBox="0 0 60 60">
+                  <use xlink:href="#folder">
+                  </use>
+                </svg>
+              </span>
+              <span class="folder-text j_folder-text">
+                Music
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:none;" class="passage-item j_passage-item-tem">
+      <div class="passage-title">
+        <p class="title-text j_title-text">
+
+        </p>
+        <span></span>
+
+      </div>
+      <div class="passage-content j_passage-content">
+
+      </div>
+      <div class="opacity-cover j_opacity-cover">
+        <div class="passage-info-container">
+          <span class="calendar-icon-container">
+                <svg class="icon" viewBox="0 0 60 60">
+                  <use xlink:href="#calendar">
+                  </use>
+                </svg>
+                <p class="passage-update-date j_passage-update-date">
+                </p>
+              </span>
+          <span class="type-icon-container">
+                <svg class="icon" viewBox="0 0 60 60">
+                  <use xlink:href="#folder">
+                  </use>
+                </svg>
+                <p class="type-text j_type-text"></p>
+              </span>
+        </div>
+        <p class="tip-text j_tip-text">显示全部</p>
       </div>
     </div>
   </div>
+
+
 
   <!-- js文件 -->
   <script src="assets/main.bundle.js"></script>
