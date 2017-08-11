@@ -7,7 +7,7 @@
  ···Auto Rename tag --自动根据对应的另一半标签更改当前标签。
  ···Beautify css/less/scss/sass --流呀优雅的格式化你的代码。
 
-以上只是部分推荐，关于vs code插件更多信息你可以浏览[这篇文章](https://segmentfault.com/a/1190000006697219)。
+以上只是部分推荐，关于vs code插件更多信息你可以浏览[这篇文章](https://segmentfault.com/a/1190000006697219)
 - ## 安装尚妆前端解决方案Spon
 1. 使用npm瓜官方源安装cnpm。切换npm源建议使用nrm，nrm可以通过npm官方安装。nrm常用命令：nrm use [name]（切换npm源）,  nrm ls（列举所有可用的源）,  （更多使用方法自查）。
 2. 将cnpm源改为尚妆npm源(http://npm.showjoy.net)。更改cnpm源方法：cnpm config set registry [url]（同样适用于npm），查看cnpm当前使用源方法：cnpm config get registry（同样适用于npm）。
