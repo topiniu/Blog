@@ -3,9 +3,9 @@
 安装完成后打开终端使用node -v和npm -v命令查看安装是否顺利。
 - ## 安装合适的编辑器
 你可以选择适合自己编程习惯的IDE，无论是sublime text还是vs code或者是webstorm都可以。编辑器各有各的好，笔者喜欢使用vs code，其完善度较高的插件市场能提供为你工作带来各种便利的插件工具，你可以到[vs code官网](https://code.visualstudio.com/)下载最新稳定版本的vs code使用。同时下面为你推荐几款插件供选择：
- ···Auto Close Tag --如同其名，自动闭合Html／Xml标签
- ···Auto Rename tag --自动根据对应的另一半标签更改当前标签。
- ···Beautify css/less/scss/sass --流呀优雅的格式化你的代码。
+1. Auto Close Tag --如同其名，自动闭合Html／Xml标签
+2. Auto Rename tag --自动根据对应的另一半标签更改当前标签。
+3. Beautify css/less/scss/sass --流呀优雅的格式化你的代码。
 
 以上只是部分推荐，关于vs code插件更多信息你可以浏览[这篇文章](https://segmentfault.com/a/1190000006697219)
 - ## 安装尚妆前端解决方案Spon
