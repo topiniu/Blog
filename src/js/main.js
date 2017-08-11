@@ -1,4 +1,3 @@
-import loadData from './loadData';
 import contactBtn from './contactBtn';
 import navAnimation from './navAnimation';
 import folderBtn from './folderTypeBtn';
@@ -19,7 +18,6 @@ $(function () {
   folderBtn();
   funcBtn();
 
-  loadData('all');
 
   // $(document).scrollTop(0);
 

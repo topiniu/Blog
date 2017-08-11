@@ -22,14 +22,9 @@ export default function (type) {
     setTimeout(function () {
       f.css('opacity', '1');
     }, 1000);
-
-
-    showmore();
-
     blurImg();
 
     return;
-
   }
 
 
@@ -40,6 +35,12 @@ export default function (type) {
     var newItem = $('.j_passage-item-tem').clone(true);
     appendItem(newItem, __PASSAGELIST[i].title, __PASSAGELIST[i].content, __PASSAGELIST[i].createDate, __PASSAGELIST[i].updateDate, __PASSAGELIST[i].type);
   }
+
+
+  showmore();
+
+  blurImg();
+
 };
 function appendItem(newItem, title, content, createDate, updateDate, type) {
   // console.log(type);
@@ -67,11 +68,6 @@ function appendItem(newItem, title, content, createDate, updateDate, type) {
   // f.append(newItem);
   $(newItem).appendTo(f);
   // console.log('appended');
-
-
-  showmore();
-
-  blurImg();
 
   // f.fadeIn('slow');
   $(document).scrollTop(0);

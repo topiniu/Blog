@@ -13,6 +13,7 @@ module.exports = {
   entry: {
     main: './src/js/main.js',
     main_style: './src/js/main_style.js',
+    loadPassage: './src/js/loadPassage.js',
     // maincss: './src/less/main.less'
   },
   plugins: [
