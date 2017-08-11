@@ -84,9 +84,12 @@
             transition: all .3s;
             .passage-item {
                 height: 400px;
+                transition: all 3s;
                 .opacity-cover {
                     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
-                    height: 100%;
+                    &.tog_up {
+                        height: 100%;
+                    }
                 }
             }
             &.show-passage-item {

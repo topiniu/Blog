@@ -24,5 +24,6 @@ $(function () {
 
   loadData('all');
 
+  // $(document).scrollTop(0);
 
 });
