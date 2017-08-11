@@ -24,7 +24,7 @@ export default function () {
       jCover.addClass('tog_down');
       jTipText.text('收起来');
     } else {
-      if (document.body.clientWidth < 766 && height === 400) {
+      if (document.body.clientWidth < 766) {
         jPassageItem.css('height', 400);
       } else {
         jPassageItem.css('height', 500);
