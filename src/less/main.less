@@ -105,7 +105,27 @@ body {
                         &:hover {
                             background: gray;
                         }
-                        a {}
+                        &.me {
+                            display: none;
+                        }
+                    }
+                    hr {
+                        display: none;
+                    }
+                }
+            }
+        }
+        .nav-clicked {
+            .nav-btn {
+                height: 35px;
+                .nav-item {
+                    &:nth-child(1) {
+                        transform: rotate(-45deg);
+                        top: 3.5px;
+                    }
+                    &:nth-child(2) {
+                        transform: rotate(45deg);
+                        top: -3.5px;
                     }
                 }
             }
@@ -129,6 +149,7 @@ body {
         width: 78%;
         height: auto;
         min-height: 500px; // background-color: skyblue;
+        opacity: 0;
         .passage-item {
             position: relative;
             overflow-x: hidden; // overflow-y: hidden;
@@ -192,9 +213,6 @@ body {
                 cursor: pointer;
                 height: 30%;
                 transition: all .3s;
-                &:hover {
-                    height: 100%;
-                }
                 &.tog_up {
                     // opacity: 1;
                     height: 30%;
@@ -204,9 +222,6 @@ body {
                 }
                 &.tog_down {
                     height: 40px; // border-top: 1px solid #FCFAF2;
-                    &:hover {
-                        // background: #FCFAF2; // color: white;
-                    }
                 }
                 .passage-info-container {
                     display: flex;
@@ -257,6 +272,7 @@ body {
         }
         .info-box {
             margin-top: 30px;
+            margin-bottom: 30px;
             .container-title {
                 font-size: 28px;
                 font-weight: bold;

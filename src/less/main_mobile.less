@@ -1,6 +1,7 @@
 @media screen and (max-width:765px) {
     .top-header-container {
         padding-top: 5px;
+        margin-bottom: 10px;
         .top-header {
             width: 90%; // max-width: 98%;
             .left-content {
@@ -16,17 +17,94 @@
                     width: 28px;
                     height: 1px;
                 }
+                .nav-panel {
+                    display: none;
+                    width: 100%;
+                    position: fixed;
+                    left: 0;
+                    height: 667px;
+                    top: 40px;
+                    color: black;
+                    background: #f5f5f5;
+                    padding-top: 50px;
+                    &:before {
+                        display: none;
+                    }
+                    ul {
+                        border-radius: 0;
+                        li {
+                            height: 40px;
+                            &.fullScreen {
+                                display: none;
+                            }
+                            &:hover {
+                                // background: white;
+                                color: gray;
+                            }
+                            .notSide {
+                                margin: 20px 0;
+                            }
+                            &.me {
+                                display: flex;
+                            }
+                        }
+                        hr {
+                            width: 180px;
+                            opacity: 0.3;
+                            display: block;
+                        }
+                    }
+                }
+            }
+            .nav-clicked {
+                .nav-btn {
+                    height: 35px;
+                    .nav-item {
+                        &:nth-child(1) {
+                            transition: all .3s;
+                            transform: rotate(-45deg);
+                            top: 13.5px;
+                        }
+                        &:nth-child(2) {
+                            transition: all .3s;
+                            transform: rotate(45deg);
+                            top: 7.5px;
+                        }
+                    }
+                }
             }
         }
     }
     .content-container {
         width: 90%; // max-width: 100%;
+        top: 45px;
         .left-blog-list-container {
+            display: none;
             width: 100%;
+            transition: all .3s;
+            .passage-item {
+                height: 400px;
+                .opacity-cover {
+                    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white);
+                    height: 100%;
+                }
+            }
+            &.show-passage-item {
+                display: block;
+                opacity: 0;
+                transition: all .3s;
+            }
         }
         .right-personal-info-container {
-            right: 300px;
+            // right: 300px;
             display: none;
+            &.show-per-info {
+                display: block;
+                opacity: 0;
+                right: 0;
+                width: 100%;
+                transition: all .3s;
+            }
         }
     }
 }

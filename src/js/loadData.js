@@ -34,7 +34,7 @@ export default function (type) {
 
 
   const self = this;
-  console.log(__PASSAGELIST.length);
+  // console.log(__PASSAGELIST.length);
   for (let i = 0; i < __PASSAGELIST.length; i++) {
     // console.log(`title=${__PASSAGELIST[i].title} content=${__PASSAGELIST[i].content} createDate=${__PASSAGELIST[i].createDate}  updateDate=${__PASSAGELIST[i].updateDate}`)
     var newItem = $('.j_passage-item-tem').clone(true);
@@ -42,7 +42,7 @@ export default function (type) {
   }
 };
 function appendItem(newItem, title, content, createDate, updateDate, type) {
-  console.log(type);
+  // console.log(type);
   $(newItem).find('.j_title-text').text(title);
   $(newItem).find('.j_passage-content').html(content);
   $(newItem).find('.j_type-text').text(type);
@@ -66,16 +66,19 @@ function appendItem(newItem, title, content, createDate, updateDate, type) {
 
   // f.append(newItem);
   $(newItem).appendTo(f);
-  console.log('appended');
+  // console.log('appended');
+
 
   showmore();
 
   blurImg();
 
   // f.fadeIn('slow');
+  $(document).scrollTop(0);
+
+  f.css('display', 'block');
   setTimeout(function () {
     f.css('opacity', '1');
-
   }, 1000);
 
 

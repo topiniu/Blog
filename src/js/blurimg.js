@@ -20,7 +20,6 @@ export default function blurImg() {
       img_full.onload = function () {
         img.src = full; // 利用缓存机制实现直接替换
         img.style.filter = "blur(0px)";
-        console.log(img.classList);
       }
     };
     J(img, full);

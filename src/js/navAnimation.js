@@ -13,33 +13,36 @@ export default function () {
   * 这是新的导航栏模块
   */
   $('.j_right-content').on('mouseenter', function () {
-    $('.j_nav-btn').css('height', '35px');
-    $('.j_nav-item').eq(0).css({
-      'transform': 'rotate(45deg)',
-      'top': '3.5px'
-    });
-    $('.j_nav-item').eq(1).css({
-      'transform': 'rotate(-45deg)',
-      'top': '-3.5px'
-    });
-    $('.j_nav-item-text').fadeOut('fast');
+    if (document.body.clientWidth > 765) {
 
-    $('.j_nav-panel').fadeIn('fast');
+      $(this).addClass('nav-clicked ');
+      $('.j_nav-item-text').fadeOut('fast');
+      $('.j_nav-panel').fadeIn('fast');
+    }
   });
 
   $('.j_right-content').on('mouseleave', function () {
-    $('.j_nav-btn').css('height', '9px');
-    $('.j_nav-item').eq(0).css({
-      'transform': 'rotate(0deg)',
-      'top': '0px'
-    });
-    $('.j_nav-item').eq(1).css({
-      'transform': 'rotate(0deg)',
-      'top': '0px'
-    });
-    $('.j_nav-item-text').fadeIn('fast');
-
-    $('.j_nav-panel').fadeOut('fast');
+    if (document.body.clientWidth > 765) {
+      $(this).removeClass('nav-clicked ');
+      $('.j_nav-item-text').fadeIn('fast');
+      $('.j_nav-panel').fadeOut('fast');
+    }
   });
+
+  $('.j_right-content').on('click', function () {
+    if (document.body.clientWidth < 766) {
+      // console.log($(this).find('.nav-panel').css('display') === 'none');
+      if ($(this).find('.nav-panel').css('display') === 'none') {
+        $(this).addClass('nav-clicked ');
+        $('.j_nav-item-text').fadeOut('fast');
+        $('.j_nav-panel').fadeIn('fast');
+      } else if ($(this).find('.nav-panel').css('display') === 'block') {
+        $('.j_nav-panel').fadeOut('fast');
+        $(this).removeClass('nav-clicked ');
+        $('.j_nav-item-text').fadeIn('fast');
+      }
+    }
+
+  })
 
 }

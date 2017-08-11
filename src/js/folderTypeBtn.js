@@ -18,7 +18,10 @@ export default function () {
 
   $('.j_folder').on('click', function () {
     var type = $(this).data('type');
-    console.log(type);
+    // console.log(type);
     loadData(type);
+
+    $('.j_me').click();
+    $('.j_right-content').click();
   });
 }
