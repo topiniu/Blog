@@ -3,9 +3,6 @@ import contactBtn from './contactBtn';
 import navAnimation from './navAnimation';
 import folderBtn from './folderTypeBtn';
 import funcBtn from './funcBtn';
-import '../less/navigationBar.less';
-import '../less/main.less';
-import '../less/main_mobile.less';
 
 import '../res/mineicon.png';
 

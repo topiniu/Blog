@@ -12,6 +12,7 @@ module.exports = {
   // 在这里写你的资源文件
   entry: {
     main: './src/js/main.js',
+    main_style: './src/js/main_style.js',
     // maincss: './src/less/main.less'
   },
   plugins: [
