@@ -5,7 +5,6 @@ import showjoy_guide_1 from '../md/showjoy_guide1.md';
 
 export default function () {
   const list = [
-    // new Passage('Test', testFile, new Date().toDateString())
     /**
      * Type your new passage here!
      * Titile  content  createDate  updateDate  type(FrontEnd or Music or Photography)
