@@ -21,7 +21,6 @@ export default function () {
     // new Passage('Test', testFile, '2017-08-08', '2017-08-09', 'Music'),
     // new Passage('Test', testFile, '2017-08-08', '2017-08-09', 'Front-end'),
     // new Passage('Test', testFile, '2017-08-08', '2017-08-09', 'Music'),
-    // new Passage('Test', testFile, '2017-08-08', '2017-08-09', 'Photography'),
     new Passage('尚妆前端快速上手-环境搭建', showjoy_guide_1, '2017-08-11', '2017-08-11', 'Front-end')
 
 
