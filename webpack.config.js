@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 
@@ -22,7 +23,8 @@ module.exports = {
       jQuery: "jquery",
       "window.jquery": "jquery"
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new UglifyJSPlugin()
   ],
   output: {
     filename: '[name].bundle.js',
@@ -64,6 +66,12 @@ module.exports = {
             }
           }
         ]
+      }, {
+        test: /\.js$/,
+        loader: 'babel-loader',
+        query: {
+          presets: ['es2015']
+        }
       }
     ]
   },

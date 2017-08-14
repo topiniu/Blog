@@ -22,16 +22,22 @@
   },
   "homepage": "https://github.com/topiniu/Blog#readme",
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
     "css-loader": "^0.28.4",
     "file-loader": "^0.11.2",
     "html-loader": "^0.5.0",
-    "jQuery": "^1.7.4",
+    "jquery": "^1.7.4",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
+    "location": "0.0.1",
     "markdown-loader": "^2.0.1",
+    "navigator": "^1.0.1",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^3.4.1",
-    "webpack-dev-server": "^2.6.1"
+    "webpack-dev-server": "^2.6.1",
+    "xmlhttprequest": "^1.8.0"
   },
   "dependencies": {
     "expose-loader": "^0.7.3",
