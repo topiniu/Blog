@@ -14,6 +14,7 @@ export default function (type) {
   f.css('opacity', '0');
 
   let __PASSAGELIST = getPassageList(type);
+  // console.log(__PASSAGELIST.length);
 
   if (__PASSAGELIST.length === 0) {
     var n = $('<h1>目前没有任何可供阅读的文档</h1>');

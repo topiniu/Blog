@@ -21,7 +21,9 @@ export default function () {
     // console.log(type);
     loadData(type);
 
-    $('.j_me').click();
-    $('.j_right-content').click();
+    if (document.body.clientWidth < 766) {
+      $('.j_me').click();
+      $('.j_right-content').click();
+    }
   });
 }
