@@ -8,14 +8,16 @@
     "build": "webpack",
     "start": "serve",
     "watch": "webpack --watch",
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server  --env=dev ",
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:dist": "webpack --env=prod --progress --profile --colors"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/topiniu/Blog.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "topiniu",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/topiniu/Blog/issues"

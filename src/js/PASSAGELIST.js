@@ -2,7 +2,7 @@ import Passage from './passageEntity.js';
 
 import testFile from '../md/testFile.md';
 import showjoy_guide_1 from '../md/showjoy_guide1.md';
-import in_showjoy_1 from '../md/inshowjoy_1.md'
+import in_showjoy_1 from '../md/inshowjoy_1.md';
 
 export default function () {
   const list = [
