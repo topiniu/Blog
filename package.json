@@ -10,7 +10,7 @@
     "watch": "webpack --watch",
     "dev": "webpack-dev-server  --env=dev ",
     "build:dev": "webpack --env=dev --progress --profile --colors",
-    "build:dist": "webpack --env=prod --progress --profile --colors"
+    "build:prod": "webpack --env=prod --progress --profile --colors"
   },
   "repository": {
     "type": "git",
