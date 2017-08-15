@@ -1,6 +1,9 @@
 const path = require('path');
 const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const Clean = require('clean-webpack-plugin');
+const HtmlWebpack = require('html-webpack-plugin');
+
 
 module.exports = {
 
@@ -17,12 +20,17 @@ module.exports = {
     // maincss: './src/less/main.less'
   },
   plugins: [
+    new Clean(['blog/assets']),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery",
       "window.jquery": "jquery"
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpack({
+      filename: '../index.html',
+      template: 'src/index.html'
+    }),
     new UglifyJSPlugin({
       beautify: false,
       mangle: {
