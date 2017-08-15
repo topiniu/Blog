@@ -6,9 +6,15 @@ export default function () {
     console.log(text);
     if (text === '全屏阅读') {
       $('.j_left-blog-list-container').css('width', '100%');
+      setTimeout(function () {
+        $('.j_right-personal-info-container').fadeOut();
+      }, 200);
       $(this).text('退出全屏');
     } else {
       $('.j_left-blog-list-container').css('width', '78%');
+      setTimeout(function () {
+        $('.j_right-personal-info-container').fadeIn();
+      }, 200);
       $(this).text('全屏阅读');
     }
   });
