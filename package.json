@@ -48,6 +48,10 @@
   },
   "dependencies": {
     "expose-loader": "^0.7.3",
-    "jquery": "^3.2.1"
+    "github-markdown-css": "^2.8.0",
+    "grommet-markdown-loader": "^0.3.0",
+    "highlight-loader": "^0.7.2",
+    "jquery": "^3.2.1",
+    "markdown-highlight-loader": "^0.1.2"
   }
 }

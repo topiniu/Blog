@@ -5,6 +5,16 @@ body {
     .powered_by {
         display: none!important;
     }
+    .markdown-body {
+        box-sizing: border-box;
+        min-width: 200px;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 45px;
+        code{
+            color: red;
+        }
+      }
 }
 
 .top-header-container {
@@ -155,7 +165,7 @@ body {
             overflow-x: hidden; // overflow-y: hidden;
             height: 500px;
             background: white;
-            transition: all 1s; // margin: 15px 15px;
+            transition: all .5s; // margin: 15px 15px;
             margin-bottom: 30px;
             overflow: hidden;
             .passage-title {

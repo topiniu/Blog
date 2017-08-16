@@ -2,6 +2,8 @@ import contactBtn from './contactBtn';
 import navAnimation from './navAnimation';
 import folderBtn from './folderTypeBtn';
 import funcBtn from './funcBtn';
+// import 'github-markdown-css';
+// import 'highlight.js'
 
 import '../res/mineicon.png';
 

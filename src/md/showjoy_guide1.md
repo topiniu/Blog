@@ -9,8 +9,8 @@
 
 以上只是部分推荐，关于vs code插件更多信息你可以浏览[这篇文章](https://segmentfault.com/a/1190000006697219)
 ### 安装尚妆前端解决方案Spon
-1. 使用npm瓜官方源安装cnpm。切换npm源建议使用nrm，nrm可以通过npm官方安装。nrm常用命令：nrm use [name]（切换npm源）,  nrm ls（列举所有可用的源）,  （更多使用方法自查）。
-2. 将cnpm源改为尚妆npm源(http://npm.showjoy.net)。更改cnpm源方法：cnpm config set registry [url]（同样适用于npm），查看cnpm当前使用源方法：cnpm config get registry（同样适用于npm）。
+1. 使用npm瓜官方源安装cnpm。切换npm源建议使用nrm，nrm可以通过npm官方安装。nrm常用命令：`nrm use [name]`（切换npm源）,  `nrm ls`（列举所有可用的源）,  （更多使用方法自查）。
+2. 将cnpm源改为尚妆npm源(npm.showjoy.net)。更改cnpm源方法：`cnpm config set registry [url]`（同样适用于npm），查看cnpm当前使用源方法：`cnpm config get registry`（同样适用于npm）。
 3. 使用npm安装webpack、gulp、yo。如果遇到网络请求过慢，建议你将npm源更改为淘宝npm源。
 4. 使用cnpm安装spon。
 5. 验证。在终端输入spon init，正常情况下最后返回的信息是success。如果运行不及预期，请检查主目录下隐藏的.spon文件夹下是否包含mobi和plugins文件夹，如果没有请检查是否将cnpm源设置成了尚妆源。如果有的话请检查是否使用了管理员角色安装，如果使用了请联系师兄师姐。

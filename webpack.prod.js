@@ -17,7 +17,10 @@ module.exports = {
     main: './src/js/main.js',
     main_style: './src/js/main_style.js',
     loadPassage: './src/js/loadPassage.js',
-    // maincss: './src/less/main.less'
+    vendor: [
+      'highlight.js/styles/railscasts.css',
+      'github-markdown-css'
+    ],
   },
   plugins: [
     new Clean(['blog/assets']),
@@ -76,12 +79,7 @@ module.exports = {
         test: /\.md$/,
         use: [
           'html-loader',
-          {
-            loader: 'markdown-loader',
-            options: {
-              gfm: false
-            }
-          }
+          'grommet-markdown-loader'
         ]
       }, {
         test: /\.js$/,
