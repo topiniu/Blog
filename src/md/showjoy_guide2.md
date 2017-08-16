@@ -8,7 +8,11 @@
 ---
 
 ### 活动模版
-> 活动模版依靠shop-m的module-activity-disposiable、module-activity-lazy、module-activity三个全局page渲染，act-module项目中的page主要负责dom架构与样式和基础的js逻辑。该项目使用到了第三方zepto.js、artTemplate.js库。act-module依靠spon的mobi工程构建工具。
+> 活动模版依靠shop-m的module-activity-disposiable、module-activity-lazy、module-activity三个全局page渲染，act-module项目中的page主要负责dom架构与样式和基础的JavaScript逻辑。该项目使用到了第三方zepto.js、artTemplate.js库。act-module依靠spon的mobi工程构建工具。
+
+<hr style="width:70%;height:1px;opacity:0.4;">
+
+## 开发
 
 act-module依靠spon的mb编译和测试。具体命令是：<br>
 **添加一个模版：**` spon mb add `<br>
@@ -23,9 +27,19 @@ page名以list开头，可通过后台配置的是顶部的banner图和背景�
   3. banner图<br>
 page名以banner开头，可通过后台配置的是整块banner图背景，如果需要特殊的按钮（比如抢红包、活动规则）则需要在模版里面编写。<br>
 
-&#8194;&#8194;在后台添加活动模版时，仅需要将page里面的html文件中的script中的模版代码粘贴到tmpl文本框里。
+&#8194;&#8194;在后台添加活动模版时，仅需要将page里面的HTML文件中的script中的模版代码粘贴到tmpl文本框里。
 <img src='http://23.106.158.25:8080/Project_BackSky_New/data/uploadimg/compressed/hhh.jpg' data-full="http://23.106.158.25:8080/Project_BackSky_New/data/uploadimg/full/hhh.png">
-&#8194;&#8194;因此，你可以在html文件里随意编写自己的测试代码。如果你想通过artTemplate测试模版是否正常工作，你可以将其他页面中的demo.js拷贝到你的page里然后在html里面引用这个有测试数据并调用了模版生成方法的js文件。<br>
-&#8194;&#8194;编写好less文件后并不会实时编译成css文件，因此我推荐你使用考拉或者其他的实时编译器在你的page目录下生成编译好的css文档供你测试。
-当然你也可以使用spon编译你的page然后在build文件夹下引用它。<br>
+&#8194;&#8194;因此，你可以在HTML文件里随意编写自己的测试代码。如果你想通过artTemplate测试模版是否正常工作，你可以将其他页面中的demo.js拷贝到你的page里然后在HTML里面引用这个有测试数据并调用了模版生成方法的JavaScript文件。<br>
+&#8194;&#8194;编写好less文件后并不会实时编译成CSS文件，因此我推荐你使用考拉或者其他的实时编译器在你的page目录下生成编译好的CSS文档供你测试。当然你也可以使用spon编译你的page然后在build文件夹下引用它。<br>
 &#8194;&#8194;如果你在测试过程中需要调用其他域名的api，但是你的api写的相对地址的话，你可以使用Charles抓包工具进行拦截并转发到正确的地址。<a style="color:gray;">*Charles工具会在项目开发过程中经常使用，建议掌握基本用法。*</a><br>
+<hr style="width:70%;height:1px;opacity:0.4;">
+
+
+## 发布
+&#8194;&#8194;act-module项目同之前的act-tmpl类似，活动模版引用的JavaScript、CSS资源文件是特定版本的文件（*git上的publish tag*），因此当你向master提交代码后并不会在已存在的模版中生效除非你手动更改它引用资源的版本号。这样会规避了你传入错误代码到master导致线上活动出现异常的情况，但是常规下**强烈禁止直接向master提交代码**，关于git流程规范，你可以参见我的另一篇文档*尚妆前端快速上手-规范要则*。<br>
+&#8194;&#8194;完成代码编写后，请使用spon编译你的page文件，然后提交到git，最后创建一个合并请求（merge request），会有管理员审核你的代码，如果没有问题你的代码将会合并到master。请在master分支打一个递增tag，然后你可以在线下环境添加的活动模版，在CSS代码段和JavaScript代码段分别协商静态资源地址（使用style标签和script标签也可以直接写普通代码），最后创建活动页面进行测试。活动模版静态资源的引用链接如下：
+> JavaScript： `<script src="http://cdn1.showjoy.com/assets/f2e/activity/act-module/[VERSION]/[PAGE_NAME]/[PAGE_NAME].min.js"></script>`<br><br>
+> CSS：`<link rel="stylesheet" href="http://cdn1.showjoy.com/assets/f2e/activity/act-module/[VERSION]/[PAGE_NAME]/[PAGE_NAME].min.css">`
+
+&#8194;&#8194;如果在测试过程中你发现了一些小问题，为了避免频繁提交，建议时用Charles进行抓包将线上的CSS、JavaScript资源代理到你的本地文件，这样你代理的活动页面采用的便是你本地的资源文件，你可以自由的更改并在线查看运行效果。在裙包所有问题都修复后再build你的page文件并提交到gitlab。
+
