@@ -68,7 +68,8 @@ module.exports = {
         test: /\.md$/,
         use: [
           'html-loader',
-          'grommet-markdown-loader'
+          // 'grommet-markdown-loader'
+          'markdown-loader'
         ]
       }, {
         test: /\.js$/,
