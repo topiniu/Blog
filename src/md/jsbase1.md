@@ -14,7 +14,7 @@
 ## 面向对象
 
 ### 创建对象
-· 工厂模式
+1. 工厂模式
 ```javascript
 function createPerson(name, age, job){
   var o = new Object();
@@ -28,7 +28,7 @@ function createPerson(name, age, job){
 }
 var person1 = createPerson('Jack', 29, 'None');
 ```
-· 构造函数模式
+2. 构造函数模式
 > · 没有显式地创建对象
 > · 直接将属性和方法赋给了this对象
 > · 没有return语句
@@ -42,4 +42,20 @@ function Person(name, age, job){
   }
 }
 var person1 = new Person('Jack', 29, 'None');
+```
+3. 原型模式
+> 将所有实体相似的属性设定到对象的prototype中。
+```javascript
+function Person(){
+
+}
+Person.prototype.name = 'Jack';
+Person.prototype.age = 29;
+Person.prototype.job = 'None';
+Person.prototype.sayName = function(){
+  alert(this.name);
+};
+
+var person1 = new Person();
+person1.sayName();
 ```
