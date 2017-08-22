@@ -14,115 +14,142 @@
 ## 面向对象
 
 ### 创建对象
-1. 工厂模式
-```javascript
-function createPerson(name, age, job){
-  var o = new Object();
-  o.name = name;
-  o.age = age;
-  o.job = job;
-  o.sayName = function(){
-    alert(this.name);
-  };
-  return o;
-}
-var person1 = createPerson('Jack', 29, 'None');
-```
-2. 构造函数模式
-> · 没有显式地创建对象
-> · 直接将属性和方法赋给了this对象
-> · 没有return语句
-```javascript
-function Person(name, age, job){
-  this.name = name;
-  this.age = age;
-  this.job = job;
-  this.sayName = function(){
-    alert(this.name);
-  }
-}
-var person1 = new Person('Jack', 29, 'None');
-```
-3. 原型模式
-> 将所有实体相似的属性设定到对象的prototype中。
-```javascript
-function Person(){
+- 工厂模式
 
-}
-Person.prototype.name = 'Jack';
-Person.prototype.age = 29;
-Person.prototype.job = 'None';
-Person.prototype.sayName = function(){
-  alert(this.name);
-};
-
-var person1 = new Person();
-person1.sayName();
-```
-**原型与in操作符**<br>
-> 有两种方式使用in操作符：单独使用和在for-in循环中使用。在单独使用时，in操作符会在通过对象能够访问给定属性时返回true，无论该属性存在与实例中还是原型中。<br>
-> 即，使用in操作符判断某个属性是否存在与某个实例中时，系统会丛当前实例寻找起顺着原型链一直找下去。与单独使用时的in相对的时hasOwnProperty方法，该方法只会在实例的作用域（执行环境）里寻找是否有匹配的属性，而不会顺着原型链一直找下去。<br>
-4. 构造函数+原型模式
-> 目前创建自定义类型最常见的方式就是构造函数（构造器）+原型模式。构造函数用于定义实例属性，而原型模式用于定义方法和共享的属性。<br>
-```javascript
-function Person(name, age, job){
-  this.name = name;
-  this.age = age;
-  this.job = job;
-  this.friends = ['Jack', 'Kang'];
-}
-Person.prototype = {
-  constructor : Person,
-  sayName : function(){
-    alert(this.name);
-  }
-}
-var person1 = new Person('Jane', 29, 'None');
-```
-5. 动态原型模式
-```javascript
-function Person(name, age, job){
-  this.name = name;
-  this.age = age;
-  this.job = job;
-
-  if(typeof this.sayName != 'function'){
-    Person.prototype.sayName = function(){
+  ```javascript
+  function createPerson(name, age, job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
       alert(this.name);
     };
+    return o;
   }
-}
-var friend = new Person('Jack', 29, 'None');
-```
-6. 寄生构造函数模式
-```javascript
-function Person(name, age, job){
-  var o = new Object();
-  o.name = name;
-  o.age = age;
-  o.job = job;
-  o.sayName = function(){
+  var person1 = createPerson('Jack', 29, 'None');
+  ```
+
+
+- 构造函数模式
+
+  > - 没有显式地创建对象
+  > - 直接将属性和方法赋给了this对象
+  > - 没有return语句
+
+  ```javascript
+  function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.sayName = function(){
+      alert(this.name);
+    }
+  }
+  var person1 = new Person('Jack', 29, 'None');
+  ```
+
+
+- 原型模式
+
+  > 将所有实体相似的属性设定到对象的prototype中。
+
+  ```javascript
+  function Person(){
+
+  }
+  Person.prototype.name = 'Jack';
+  Person.prototype.age = 29;
+  Person.prototype.job = 'None';
+  Person.prototype.sayName = function(){
     alert(this.name);
   };
-  return 0;
-}
-var friend = new Person('Jack', 29, 'None');
-```
-7. 稳妥构造函数模式
-> 道格拉斯·克罗克福德发明了js中的稳妥对象概念。** 稳妥对象 **指的是没有公共属性，而且其方法也不引用this的对象。稳妥对象最适合在一些安全的环境中（这些环境会金庸this和new），或者在防治数据被其他应用程序改动时使用。稳妥构造函数模式与寄生构造函数模式类似，但有两点不同：
-> 1. 新创建对象的实力方法不引用this
-> 2. 不使用new操作符调用构造函数。
-```javascript
-function Person(name, age, job){
-  var o = new Object();
-  o.sayName = function(){
-    alert(name);
+
+  var person1 = new Person();
+  person1.sayName();
+  ```
+
+  **原型与in操作符**<br>
+
+  > 有两种方式使用in操作符：单独使用和在for-in循环中使用。在单独使用时，in操作符会在通过对象能够访问给定属性时返回true，无论该属性存在与实例中还是原型中。<br>
+  > 即，使用in操作符判断某个属性是否存在与某个实例中时，系统会丛当前实例寻找起顺着原型链一直找下去。与单独使用时的in相对的时hasOwnProperty方法，该方法只会在实例的作用域（执行环境）里寻找是否有匹配的属性，而不会顺着原型链一直找下去。<br>
+
+
+- 构造函数+原型模式
+
+  > 目前创建自定义类型最常见的方式就是构造函数（构造器）+原型模式。构造函数用于定义实例属性，而原型模式用于定义方法和共享的属性。<br>
+
+  ```javascript
+  function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+    this.friends = ['Jack', 'Kang'];
   }
-  return o;
-}
-var friend = new Person('Jack', 29, 'None');
-friend.sayName();
-```
+  Person.prototype = {
+    constructor : Person,
+    sayName : function(){
+      alert(this.name);
+    }
+  }
+  var person1 = new Person('Jane', 29, 'None');
+  ```
+
+
+- 动态原型模式
+
+  ```javascript
+  function Person(name, age, job){
+    this.name = name;
+    this.age = age;
+    this.job = job;
+
+    if(typeof this.sayName != 'function'){
+      Person.prototype.sayName = function(){
+        alert(this.name);
+      };
+    }
+  }
+  var friend = new Person('Jack', 29, 'None');
+  ```
+
+
+- 寄生构造函数模式
+
+  ```javascript
+  function Person(name, age, job){
+    var o = new Object();
+    o.name = name;
+    o.age = age;
+    o.job = job;
+    o.sayName = function(){
+      alert(this.name);
+    };
+    return 0;
+  }
+  var friend = new Person('Jack', 29, 'None');
+  ```
+
+
+- 稳妥构造函数模式
+
+  > 道格拉斯·克罗克福德发明了js中的稳妥对象概念。** 稳妥对象 **指的是没有公共属性，而且其方法也不引用this的对象。稳妥对象最适合在一些安全的环境中（这些环境会金庸this和new），或者在防治数据被其他应用程序改动时使用。稳妥构造函数模式与寄生构造函数模式类似，但有两点不同：
+  >
+  > 1. 新创建对象的实力方法不引用this
+  > 2. 不使用new操作符调用构造函数。
+
+  ```javascript
+  function Person(name, age, job){
+    var o = new Object();
+    o.sayName = function(){
+      alert(name);
+    }
+    return o;
+  }
+  var friend = new Person('Jack', 29, 'None');
+  friend.sayName();
+  ```
+
 在上面的示例中，出了调用sayName方法外没有办法再访问到name属性。
 
 ### 继承
@@ -217,6 +244,10 @@ friend.sayName();
      ```
 
    - 借用构造函数问题
+
+<a style="color:gray;font-size:10px;">未完待续</a>
+
+
 
      ​
 

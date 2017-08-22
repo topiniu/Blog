@@ -10,19 +10,25 @@ const f = $('.j_left-blog-list-container');
 export default function (type) {
 
   // console.log('置空');
-  f.empty();
+  // f.css('transition', 'all 0s');
+  // f.css('display', 'none');
   f.css('opacity', '0');
+  f.empty();
+  // f.css('transition', 'all .3s');
+
 
   let __PASSAGELIST = getPassageList(type);
   // console.log(__PASSAGELIST.length);
 
   if (__PASSAGELIST.length === 0) {
     var n = $('<h1>目前没有任何可供阅读的文档</h1>');
-    f.append(n);
+    // f.css('display', 'block');
+
     // f.fadeIn('slow');
     setTimeout(function () {
+      f.append(n);
       f.css('opacity', '1');
-    }, 1000);
+    }, 800);
     blurImg();
 
     return;
@@ -76,7 +82,7 @@ function appendItem(newItem, title, content, createDate, updateDate, type) {
   f.css('display', 'block');
   setTimeout(function () {
     f.css('opacity', '1');
-  }, 1000);
+  }, 800);
 
 
 }
