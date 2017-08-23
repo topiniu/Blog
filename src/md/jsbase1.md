@@ -245,12 +245,42 @@
 
    - 借用构造函数问题
 
-<a style="color:gray;font-size:10px;">未完待续</a>
+     方法都在构造函数中定义，因此函数复用就无从谈起了。
 
+3. 组合继承。
 
+   将原型链和借用构造函数的技术组合到一块，从而发挥二者之长的一种继承模式。大致思路是使用原型链实现对原型属性的继承，通过借用构造函数来实现对实例属性的继承。
 
-     ​
+   ```javascript
+   function SuperType(name){
+       this.name = name;
+     	this.colors = ['red','blue'];
+   }
+   SuperType.prototype.sayName = function(){
+       alert(this.name);
+   };
+   function SubType(name,age){
+       SuperType.call(this,name);
+     	this.age = age;
+   }
+   SubType.prototype = new SuperType();//继承方法
+   SubType.prototype.sayAge = function(){
+       alert(this.age);
+   };
+   var instance1 = new SubType('Jack',29);
+   instance1.colors.push('black');
 
+   alert(instance1.colors);//red,blue,black
+   instance1.sayName();//'Jack'
+   instanse1.sayAge();//29
+
+   var instance2 = new SubType('Jane',27);
+   alert(instance2.colors);//red,blue
+   instance2.sayName();//Jane
+   instance2.sayAge();//27
+   ```
+
+4. 除了上述几种继承方式外，还有**原型式继承**、**寄生式继承**、**寄生组合式继承**。
 
    ​
 

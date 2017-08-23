@@ -83,6 +83,4 @@ function appendItem(newItem, title, content, createDate, updateDate, type) {
   setTimeout(function () {
     f.css('opacity', '1');
   }, 800);
-
-
 }
