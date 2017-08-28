@@ -95,6 +95,18 @@
                         height: 100%;
                     }
                 }
+                .passage-title{
+                    padding: 0 5px;
+                    p{
+                        display: inline-block;
+                        height: 20px;
+                        width: 100%;
+                        line-height: 1.3rem;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                    }
+                }
             }
             &.show-passage-item {
                 display: block;
@@ -105,12 +117,16 @@
         .right-personal-info-container {
             // right: 300px;
             display: none;
+            position: relative;
             &.show-per-info {
                 display: block;
                 opacity: 0;
-                right: 0;
+                /* right: 0; */
                 width: 100%;
+                left: 50%;
                 transition: all .3s;
+                transform: translate(-50%,0);
+
             }
         }
     }

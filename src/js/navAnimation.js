@@ -35,6 +35,8 @@ export default function () {
       if ($(this).find('.nav-panel').css('display') === 'none') {
         $(this).addClass('nav-clicked ');
         $('.j_nav-item-text').fadeOut('fast');
+        $('.j_nav-panel').css('height',$(window).height());
+        // console.log($(window).height() + ' ss ' + $(document).height() + 'ss' + $(window).innerHeight() +'ss '+ $(window).outerHeight());
         $('.j_nav-panel').fadeIn('fast');
       } else if ($(this).find('.nav-panel').css('display') === 'block') {
         $('.j_nav-panel').fadeOut('fast');

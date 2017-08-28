@@ -37,6 +37,8 @@
   > - 直接将属性和方法赋给了this对象
   > - 没有return语句
 
+  使用构造函数方式创建对象会在每一个对象实例中创建定义的方法造成浪费。因此一般情况下会选择使用原型方法结合其他方式创建。
+
   ```javascript
   function Person(name, age, job){
     this.name = name;
