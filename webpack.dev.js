@@ -6,6 +6,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssets = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 
+const ExtractCss = new ExtractTextPlugin('markdown.bundle.css');
+const ExtractLess = new ExtractTextPlugin('styles.bundle.css');
+
 module.exports = {
 
   devtool: 'cheap-module-source-map',
@@ -26,7 +29,9 @@ module.exports = {
   },
   plugins: [
     new Clean(['blog/assets']),
-    new ExtractTextPlugin('styles.css'),
+    // new ExtractCss('styles.bundle.css'),
+    ExtractCss,
+    ExtractLess,
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -52,20 +57,15 @@ module.exports = {
     rules: [
       {
         test: /\.less$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              minimize: true,
-            },
-          },
-          'less-loader',
-        ],
+        use:
+          ExtractLess.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'less-loader'],
+          }),
       }, {
         test: /\.css$/,
         use:
-          ExtractTextPlugin.extract({
+          ExtractCss.extract({
             fallback: 'style-loader',
             use: 'css-loader',
           }),

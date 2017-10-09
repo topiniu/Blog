@@ -49,12 +49,12 @@ module.exports = {
       comments: false,
     }),
     new ExtractTextPlugin('styles.bundle.css'),
-    new OptimizeCssAssets({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: cssnano,
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: true,
-    }),
+    // new OptimizeCssAssets({
+    //   assetNameRegExp: /\.css$/g,
+    //   cssProcessor: cssnano,
+    //   cssProcessorOptions: { discardComments: { removeAll: true } },
+    //   canPrint: true,
+    // }),
   ],
   output: {
     filename: '[name].bundle.js',
