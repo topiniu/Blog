@@ -7,6 +7,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const OptimizeCssAssets = require('optimize-css-assets-webpack-plugin');
 const cssnano = require('cssnano');
 
+const ExtractCss = new ExtractTextPlugin('markdown.bundle.css');
+const ExtractLess = new ExtractTextPlugin('styles.bundle.css');
+
 
 module.exports = {
 
@@ -48,13 +51,14 @@ module.exports = {
       },
       comments: false,
     }),
-    new ExtractTextPlugin('styles.bundle.css'),
-    // new OptimizeCssAssets({
-    //   assetNameRegExp: /\.css$/g,
-    //   cssProcessor: cssnano,
-    //   cssProcessorOptions: { discardComments: { removeAll: true } },
-    //   canPrint: true,
-    // }),
+    ExtractCss,
+    ExtractLess,
+    new OptimizeCssAssets({
+      assetNameRegExp: /\.css$/g,
+      cssProcessor: cssnano,
+      cssProcessorOptions: { discardComments: { removeAll: true } },
+      canPrint: true,
+    }),
   ],
   output: {
     filename: '[name].bundle.js',
@@ -64,20 +68,15 @@ module.exports = {
     rules: [
       {
         test: /\.less$/,
-        use: [
-          'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              minimize: true,
-            },
-          },
-          'less-loader',
-        ],
+        use:
+          ExtractLess.extract({
+            fallback: 'style-loader',
+            use: ['css-loader', 'less-loader'],
+          }),
       }, {
         test: /\.css$/,
         use:
-          ExtractTextPlugin.extract({
+          ExtractCss.extract({
             fallback: 'style-loader',
             use: 'css-loader',
           }),
