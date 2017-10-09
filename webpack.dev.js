@@ -10,7 +10,6 @@ const ExtractCss = new ExtractTextPlugin('markdown.bundle.css');
 const ExtractLess = new ExtractTextPlugin('styles.bundle.css');
 
 module.exports = {
-
   devtool: 'cheap-module-source-map',
   watch: true,
   watchOptions: {
