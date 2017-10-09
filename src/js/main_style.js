@@ -1,4 +1,6 @@
 
-import '../less/navigationBar.less';
-import '../less/main.less';
-import '../less/main_mobile.less';
+require('../less/navigationBar.less');
+
+require('../less/main.less');
+
+require('../less/main_mobile.less');
