@@ -12,11 +12,7 @@
 
 ## 项目结构
 
-[strc of project](http://23.106.158.25:8080/Project_BackSky_New/data/uploadimg/full/capture.png)
-
-
-
-
+[![strc of project](http://23.106.158.25:8080/Project_BackSky_New/data/uploadimg/full/capture.png)]
 
 **-blog：**
 编译后的静态文件夹
