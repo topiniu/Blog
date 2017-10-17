@@ -20,19 +20,19 @@
 **-src：**
 源代码
 
-​	**js：**
+ - **js：**
 js文件
 
-​	**less：**
+ - **less：**
 less文件
 
-​	**md：**
+ - **md：**
 博客内容，markdown文件
 
-​	**res：**
+ - **res：**
 资源文件，例如图片
 
-​	**index.html：**
+ - **index.html：**
 webpack编译时采用的html模版
 
 **webpack.prod.js：**
