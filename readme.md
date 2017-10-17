@@ -12,29 +12,38 @@
 
 ## 项目结构
 
-<img src="http://23.106.158.25:8080/Project_BackSky_New/data/uploadimg/full/capture.png" style="width:150px; height:252px;float:right;position:absolute;right:0">
+[strc of project](http://23.106.158.25:8080/Project_BackSky_New/data/uploadimg/full/capture.png)
 
 
 
 
 
-**-blog：**编译后的静态文件夹
+**-blog：**
+编译后的静态文件夹
 
-**-src：**源代码
+**-src：**
+源代码
 
-​	**js：**js文件
+​	**js：**
+js文件
 
-​	**less：**less文件
+​	**less：**
+less文件
 
-​	**md：**博客内容，markdown文件
+​	**md：**
+博客内容，markdown文件
 
-​	**res：**资源文件，例如图片
+​	**res：**
+资源文件，例如图片
 
-​	**index.html：**webpack编译时采用的html模版
+​	**index.html：**
+webpack编译时采用的html模版
 
-**webpack.prod.js：**webpack生产环境编译配置文件
+**webpack.prod.js：**
+webpack生产环境编译配置文件
 
-**webpack.dev.js：**webpack开发环境编译配置文件
+**webpack.dev.js：**
+webpack开发环境编译配置文件
 
 
 
