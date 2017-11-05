@@ -68,6 +68,7 @@ function appendItem(newItem, title, content, createDate, updateDate, type) {
     createDate.split('-')[2] + '日'
   );
 
+  $(newItem).attr('data-title',title);
   $(newItem).css('display', 'block');
   $(newItem).removeClass(' j_passage-item-tem');
   $(newItem).addClass(' j_passage-item');

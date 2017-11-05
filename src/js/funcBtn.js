@@ -1,9 +1,9 @@
 export default function () {
   // console.log('haha');
   $('.j_fullScreen').on('click', function () {
-    console.log(0);
+    // console.log(0);
     let text = $(this).text();
-    console.log(text);
+    // console.log(text);
     if (text === '全屏阅读') {
       $('.j_left-blog-list-container').css('width', '100%');
       setTimeout(function () {
@@ -20,7 +20,7 @@ export default function () {
   });
 
   $('.j_test-btn').on('click', function () {
-    console.log('haha');
+    // console.log('haha');
   })
   $('.j_me').on('click', function () {
     let r = $('.j_right-personal-info-container');
